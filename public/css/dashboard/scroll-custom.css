@@ -1,0 +1,43 @@
+/*  */
+
+.scroll-custom::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+    background: #242424;
+    ;
+    border-radius: 4px;
+}
+
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+
+.scroll-custom::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Cambiamos el fondo cuando esté en active */
+
+.scroll-custom::-webkit-scrollbar-thumb:active {
+    background-color: #252525;
+    ;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+    background: #e1e1e10c;
+    border-radius: 4px;
+}
+
+
+/* Cambiamos el fondo cuando esté en active o hover */
+
+.scroll-custom::-webkit-scrollbar-track:hover,
+.scroll-custom::-webkit-scrollbar-track:active {
+    background: #d4d4d411;
+}

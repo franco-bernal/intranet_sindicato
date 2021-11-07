@@ -1,0 +1,145 @@
+:root {
+    --principal-back: rgb(182, 93, 93);
+    /* --principal-back: #4ce2aa; */
+    --principal-color: white;
+    --second-back: #694646;
+    --second-color: #aa5b5b;
+}
+
+body {
+    background: var(--principal-back);
+    font-family: 'admin-regular';
+}
+
+
+/* popup fondo clicleable */
+
+#popupback {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #00000050;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* logo en barra */
+
+.logo-barra {
+    width: 50%;
+    float: left;
+}
+
+
+/* logout en barra*/
+
+.fbg_options {
+    width: 45%;
+    float: left;
+    height: 40px;
+    position: relative;
+    text-align: right;
+}
+
+.fbg_options a {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fbg_options img {
+    width: 20px;
+}
+
+
+/* barra completa */
+
+.barra {
+    margin-left: -300px;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--principal-back);
+    z-index: 101;
+    box-shadow: 1px 0px 5px -2px black;
+    padding: 15px;
+    padding-right: 0;
+}
+
+.barra * {
+    color: var(--principal-color);
+}
+
+
+/* Titulo usuario barra */
+
+.barra_title {
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'admin-regular';
+    float: left;
+    width: 100%;
+}
+
+.barra_title p {
+    margin: 0;
+    color: var(--principal-color) !important;
+}
+
+.barra_title img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+/* items de la barra */
+
+.barra_items {
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.barra_items a {
+    width: 100%;
+    display: block;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+
+/* boton abrir cerrar barra */
+
+.openbarra {
+    position: absolute;
+    right: -21px;
+    top: 10%;
+    color: var(--principal-color);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    user-select: none;
+    cursor: pointer;
+    background: black;
+    border-right: 1px solid white;
+    /* background-image: url('../../img/background/background-holographic.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.openbarra img {
+    height: 21px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transform: rotate(-90deg);
+}

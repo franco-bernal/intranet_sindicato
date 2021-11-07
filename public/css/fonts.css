@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'admin-thin';
+    src: url('../fonts/inter/Inter-Thin-BETA.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'admin-regular';
+    src: url('../fonts/inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'admin-bold';
+    src: url('../fonts/inter/Inter-ExtraBold.ttf') format('truetype');
+}

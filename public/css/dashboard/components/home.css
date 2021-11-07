@@ -1,0 +1,33 @@
+.fbg_home {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    padding: 50px;
+    padding-top: 100px;
+    float: left;
+}
+
+.fbg_instruction-space {
+    height: auto;
+    width: 30%;
+    background: var(--principal-back);
+    color: var(--principal-color);
+    padding: 10px;
+    float: left;
+}
+
+.fbg_content-space {
+    height: auto;
+    width: 68%;
+    padding: 20px;
+    float: left;
+}
+
+@media(max-width:900px) {
+    .fbg_instruction-space {
+        width: 100%;
+    }
+    .fbg_content-space {
+        width: 100%;
+    }
+}

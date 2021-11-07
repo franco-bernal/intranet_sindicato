@@ -1,0 +1,115 @@
+#fbg_res_tab {
+    width: 100%;
+    background-color: #1f1f1f10;
+    border-radius: 10px;
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.fbg_item_tab {
+    background-color: var(--principal-back);
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.fbg_item_tab * {
+    color: var(--principal-color);
+}
+
+.fbg_itemtabdisplay {
+    display: block;
+    text-align: center;
+}
+
+.fbg_itemtabdisplay span {
+    width: 24%;
+    display: inline-block;
+}
+
+
+/* apartado oculto de los items */
+
+.fbg_itemtabhidden {
+    display: none;
+}
+
+.fbg_itemtabhidden span {
+    display: inline-block;
+    width: 48%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.055);
+    margin: 3px;
+    border-radius: 2px;
+}
+
+.fbg_itemtabhidden span {
+    font-size: 12px;
+}
+
+
+/* cambio de status */
+
+.fbg_cambioStatus {
+    text-align: right;
+}
+
+.fbg_cambioStatus a {
+    color: white;
+    text-decoration: none;
+    padding: 3px 7px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    display: inline-block;
+}
+
+.fbg_cambioStatus .aprobar {
+    background-color: rgb(94, 187, 0);
+}
+
+.fbg_cambioStatus .rechazar {
+    background-color: rgb(160, 0, 0);
+}
+
+.fbg_cambioStatus .en-espera {
+    background-color: rgb(194, 149, 0);
+}
+
+.fbg_cambioStatus .aprobar:hover {
+    transition: background-color 0.4s;
+    background-color: rgb(128, 255, 0);
+}
+
+.fbg_cambioStatus .rechazar:hover {
+    transition: background-color 0.4s;
+    background-color: rgb(255, 0, 0);
+}
+
+.fbg_cambioStatus .en-espera:hover {
+    background-color: rgb(255, 196, 0);
+}
+
+
+/* solicitudes */
+
+#fbg_statusSolicitud a {
+    padding: 3px;
+    border-radius: 3px;
+    transition: background-color 0.4s;
+    cursor: pointer;
+}
+
+.status_pendiente a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black !important;
+    transition: background-color 0.4s;
+}
+
+.status_pendiente a {
+    background-color: yellow;
+    color: black !important;
+}

@@ -1,0 +1,21 @@
+.fbg_header {}
+
+.fbg_header {
+    width: 100%;
+    height: auto;
+    float: right;
+    background-color: var(--principal-back);
+    padding: 0 10vw;
+}
+
+.fbg_header li {
+    list-style: none;
+    text-align: right;
+    float: right;
+    padding: 20px;
+}
+
+.fbg_header li a {
+    text-decoration: none;
+    color: var(--principal-color);
+}

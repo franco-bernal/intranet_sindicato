@@ -1,2 +1,0 @@
-{{ Auth::check() ? 'yes' : 'no' }} 
- @if (Auth::user()->tipo_usuario==1) 

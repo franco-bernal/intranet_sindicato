@@ -1,11 +1,6 @@
 <?php
 
-use App\Models\Blogs;
-use App\Models\Noticias;
-use App\Models\Page;
-use App\Models\Product;
-use App\Models\Tecnologies;
-use App\Models\User;
+
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -22,9 +17,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::post('/enviarpreguntas', [App\Http\Controllers\PreguntasController::class, 'enviarpreguntas'])->name('preguntas.add');
+
+Auth::routes(['register' => false]);
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/verpreguntas', [App\Http\Controllers\PreguntasController::class, 'listarpreguntas'])->name('verpreguntas.add');
+Route::get('/Nosotros', [App\Http\Controllers\NosotrosController::class, 'nosotros'])->name('nosotros.add');
+
+Route::get('/Registro', [App\Http\Controllers\Registro_sociosController::class, 'enviarsolicitud'])->name('solicitud.view');
+
+Route::get('/configuracionDashboard', [App\Http\Controllers\DashboardsController::class, 'configuracion'])->name('dashboard.configuracion');
+
+Route::get('/', [App\Http\Controllers\landingsController::class, 'index'])->name('landing.add');
+Route::get('/createUsers', [App\Http\Controllers\UsersController::class, 'create']);
+
+
+// admin
+Route::group(['middleware' => 'admin'], function () {
+    // •Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\DashboardsController::class, 'home'])->name('dashboard.home');
+
+
+    // •Solititudes
+    Route::get('/solicitudes', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'index'])->name('solicitudes.page');
+    Route::post('/enviarSolicitud', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'enviar_solicitud'])->name('solicitud.add');
+    Route::POST('/cambiarEstado', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'editStatus'])->name('solicitud.status');
+});
 
 
 // Route::get('/', function () {
