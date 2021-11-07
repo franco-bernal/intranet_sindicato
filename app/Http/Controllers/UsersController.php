@@ -16,23 +16,24 @@ class UsersController extends Controller
     public function create()
     {
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+            'name' => 'admincito',
+            'email' => 'admincito@gmail.com',
             'password' => Hash::make('123456789'),
             'tipo_usuario' => 2
         ]);
         DB::table('users')->insert([
-            'name' => 'juan',
-            'email' => 'juan@gmail.com',
+            'name' => 'juanito',
+            'email' => 'juanito@gmail.com',
             'password' => Hash::make('123456789'),
             'tipo_usuario' => 1
         ]);
         DB::table('users')->insert([
-            'name' => 'pedro',
-            'email' => 'pedro@gmail.com',
+            'name' => 'pedrito',
+            'email' => 'pedrito@gmail.com',
             'password' => Hash::make('123456789'),
             'tipo_usuario' => 1
         ]);
+
 
         return User::all();
     }
