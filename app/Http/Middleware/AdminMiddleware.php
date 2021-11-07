@@ -17,13 +17,15 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        return $next($request);
+
         try {
             if (Auth::user()->tipo_usuario == 1)
                 return $next($request);
-
-            return redirect('/');
+            // return redirect('/');
         } catch (\Throwable $th) {
-            return redirect('/');
+            return "a";
+            // return redirect('/');
         }
     }
 }

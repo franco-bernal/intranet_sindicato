@@ -19,10 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/enviarpreguntas', [App\Http\Controllers\PreguntasController::class, 'enviarpreguntas'])->name('preguntas.add');
 
-Auth::routes(['register' => false]);
+// Auth::routes(['register' => false]);
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/verpreguntas', [App\Http\Controllers\PreguntasController::class, 'listarpreguntas'])->name('verpreguntas.add');
 Route::get('/Nosotros', [App\Http\Controllers\NosotrosController::class, 'nosotros'])->name('nosotros.add');
 
@@ -164,3 +163,7 @@ Route::group(['middleware' => 'admin'], function () {
 //     echo shell_exec('php artisan route:clear');
 //     echo shell_exec('php artisan optimize');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

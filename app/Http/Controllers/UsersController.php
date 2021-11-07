@@ -19,19 +19,19 @@ class UsersController extends Controller
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123456789'),
-            'typeuser' => 2
+            'tipo_usuario' => 2
         ]);
         DB::table('users')->insert([
             'name' => 'juan',
             'email' => 'juan@gmail.com',
             'password' => Hash::make('123456789'),
-            'typeuser' => 1
+            'tipo_usuario' => 1
         ]);
         DB::table('users')->insert([
             'name' => 'pedro',
             'email' => 'pedro@gmail.com',
             'password' => Hash::make('123456789'),
-            'typeuser' => 1
+            'tipo_usuario' => 1
         ]);
 
         return User::all();
