@@ -46,6 +46,11 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 // Route::get('/', function () {
 //     $data = Product::orderBy('order', 'desc')->where('active', '1')->get();
 //     $tecnologies = Tecnologies::orderBy('order', 'desc')->where('active', '1')->get();
@@ -163,7 +168,3 @@ Route::group(['middleware' => 'admin'], function () {
 //     echo shell_exec('php artisan route:clear');
 //     echo shell_exec('php artisan optimize');
 // });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

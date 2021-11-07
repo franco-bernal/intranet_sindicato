@@ -12,6 +12,6 @@ class Registro_sociosController extends Controller
 {
     function enviarsolicitud(Request $request)
     {
-        return view('Registro_socios');
+        return view('registro_socios');
     }
 }
