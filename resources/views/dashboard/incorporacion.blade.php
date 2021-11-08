@@ -20,7 +20,7 @@
         <h2>Solicitudes Pendientes</h2>
         <div id="fbg_res_tab" class="section-pendientes">
             <!-- Item -->
-            @foreach($solicitudes as $solicitud)
+            @forelse($solicitudes as $solicitud)
             @if($solicitud->status=='pendiente')
             <div class="fbg_item_tab" id="item{{ $solicitud->rut }}{{ $solicitud->id }}">
                 <div class="fbg_itemtabdisplay">
@@ -45,16 +45,16 @@
                 </div>
             </div>
             @endif
-            @endforeach
+            @empty
+            <p>Vacío</p>
+            @endforelse
             <!-- /Item -->
-
-
         </div>
 
         <h2>En Revision</h2>
         <div id="fbg_res_tab" class="section-revision">
             <!-- Item -->
-            @foreach($solicitudes as $solicitud)
+            @forelse($solicitudes as $solicitud)
             @if($solicitud->status=='revision')
             <div class="fbg_item_tab" id="item{{ $solicitud->rut }}{{ $solicitud->id }}">
                 <div class="fbg_itemtabdisplay">
@@ -72,14 +72,15 @@
                     <span><strong>Contacto: </strong>{{ $solicitud->tel }}</span>
                     <span id="fbg_statusSolicitud" class="status_{{ $solicitud->status }}">Estado: <a onclick="">{{ $solicitud->status }}</a></span>
                     <div class="fbg_cambioStatus">
-                        <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 2,'{{ $solicitud->rut }}')" class="en-espera">en espera</a>
                         <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 1,'{{ $solicitud->rut }}')" class="aprobar">aprobar</a>
                         <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 0,'{{ $solicitud->rut }}')" class="rechazar">rechazar</a>
                     </div>
                 </div>
             </div>
             @endif
-            @endforeach
+            @empty
+            <p>Vacío</p>
+            @endforelse
             <!-- /Item -->
         </div>
 
@@ -89,7 +90,7 @@
     <h2>Reintentos</h2>
     <div id="fbg_res_tab" class="section-reintentos">
         <!-- Item -->
-        @foreach($solicitudes as $solicitud)
+        @forelse($solicitudes as $solicitud)
         @if($solicitud->status=='reintento')
         <div class="fbg_item_tab" id="item{{ $solicitud->rut }}{{ $solicitud->id }}">
             <div class="fbg_itemtabdisplay">
@@ -114,13 +115,16 @@
             </div>
         </div>
         @endif
-        @endforeach
+        @empty
+
+        <p>Vacío</p>
+        @endforelse
         <!-- /Item -->
     </div>
     <h2>Solicitudes Aprobadas</h2>
     <div id="fbg_res_tab" class="section-aprobados">
         <!-- Item -->
-        @foreach($solicitudes as $solicitud)
+        @forelse($solicitudes as $solicitud)
         @if($solicitud->status=='aprobado')
         <div class="fbg_item_tab" id="item{{ $solicitud->rut }}{{ $solicitud->id }}">
             <div class="fbg_itemtabdisplay">
@@ -139,19 +143,21 @@
                 <span id="fbg_statusSolicitud" class="status_{{ $solicitud->status }}">Estado: <a onclick="">{{ $solicitud->status }}</a></span>
                 <div class="fbg_cambioStatus">
                     <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 2,'{{ $solicitud->rut }}')" class="en-espera">en espera</a>
-                    <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 1,'{{ $solicitud->rut }}')" class="aprobar">aprobar</a>
                     <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 0,'{{ $solicitud->rut }}')" class="rechazar">rechazar</a>
                 </div>
             </div>
         </div>
         @endif
-        @endforeach
+        @empty
+
+        <p>Vacío</p>
+        @endforelse
         <!-- /Item -->
     </div>
     <h2>Solicitudes Rechazadas</h2>
     <div id="fbg_res_tab" class="section-rechazados">
         <!-- Item -->
-        @foreach($solicitudes as $solicitud)
+        @forelse($solicitudes as $solicitud)
         @if($solicitud->status=='rechazado')
         <div class="fbg_item_tab" id="item{{ $solicitud->rut }}{{ $solicitud->id }}">
             <div class="fbg_itemtabdisplay">
@@ -171,12 +177,14 @@
                 <div class="fbg_cambioStatus">
                     <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 2,'{{ $solicitud->rut }}')" class="en-espera">en espera</a>
                     <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 1,'{{ $solicitud->rut }}')" class="aprobar">aprobar</a>
-                    <a onclick="changeStatus('item{{ $solicitud->rut }}{{ $solicitud->id }}','{{ $solicitud->id }}', 0,'{{ $solicitud->rut }}')" class="rechazar">rechazar</a>
                 </div>
             </div>
         </div>
         @endif
-        @endforeach
+        @empty
+
+        <p>Vacío</p>
+        @endforelse
         <!-- /Item -->
     </div>
 </div>
@@ -188,7 +196,6 @@
         let status_section;
 
         if (status == 0 || status == 1 || status == 2) {
-            alert("cambiar estado a " + status);
             if (status == 0) {
                 status_section = "section-rechazados";
             }

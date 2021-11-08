@@ -1,7 +1,7 @@
 :root {
-    --principal-back: rgb(182, 93, 93);
+    --principal-back: rgb(37, 37, 37);
     /* --principal-back: #4ce2aa; */
-    --principal-color: white;
+    --principal-color: #ffffff;
     --second-back: #694646;
     --second-color: #aa5b5b;
 }
@@ -20,7 +20,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background: #00000050;
+    background: #000000de;
     z-index: 100;
     cursor: pointer;
     display: none;
@@ -96,7 +96,7 @@ body {
 }
 
 .barra_title img {
-    width: 20px;
+    width: 50px;
     margin-right: 10px;
 }
 
@@ -113,7 +113,7 @@ body {
 .barra_items a {
     width: 100%;
     display: block;
-    margin-left: 20px;
+    margin-left: 10px;
     text-decoration: none;
 }
 
@@ -130,8 +130,8 @@ body {
     user-select: none;
     cursor: pointer;
     background: black;
-    border-right: 1px solid white;
-    /* background-image: url('../../img/background/background-holographic.png'); */
+    /* border-right: 1px solid white; */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.047)), url('../../img/background/background-holographic.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
