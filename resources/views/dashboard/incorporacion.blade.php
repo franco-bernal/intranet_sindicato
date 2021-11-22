@@ -188,7 +188,6 @@
         <!-- /Item -->
     </div>
 </div>
-<script src="{{ asset('js/dashboard/res-table.js') }}"></script>
 <script src="{{ asset('js/dashboard/incorporacion.js') }}"></script>
 <script>
     function changeStatus(elemId, id, status, rut) {

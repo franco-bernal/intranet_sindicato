@@ -2,16 +2,11 @@
 
 use Carbon\Carbon;
 
-function todayDate($date)
+function tipoUser($type)
 {
-    // $max_date = Carbon::parse($date);
-
-    // $today = Carbon::now();
-    // if ($max_date->diff($today)->days == 0) {
-    //     return "hoy - " . $date;
-    // }
-    return $date;
+    if ($type == 1) {
+        return "admin";
+    } elseif ($type == 0) {
+        return "guest";
+    }
 }
-
-
-

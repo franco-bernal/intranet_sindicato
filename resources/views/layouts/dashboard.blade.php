@@ -100,8 +100,8 @@
                     <p>Comentarios</p>
                 </a>
                 <h3 class="fbg_item-title">Soporte</h3>
-                <a href=""><img src="{{ asset('img/icons/empresario.png') }}" alt="">
-                    <p>Comentarios</p>
+                <a href="{{ route('dashboard.users') }}"><img src="{{ asset('img/icons/empresario.png') }}" alt="">
+                    <p>Usuarios</p>
                 </a>
                 <a href=""><img src="{{ asset('img/icons/empresario.png') }}" alt="">
                     <p>Comentarios</p>
@@ -118,6 +118,8 @@
 
     <script src="{{ asset('js/jQuery_v3_6_0.js') }}"></script>
     <script src="{{ asset('js/dashboard/openclose.js') }}"></script>
+    <script src="{{ asset('js/dashboard/res-table.js') }}"></script>
+
 </body>
 
 </html>

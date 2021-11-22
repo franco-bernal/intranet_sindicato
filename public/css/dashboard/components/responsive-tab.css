@@ -1,19 +1,19 @@
 #fbg_res_tab {
     width: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    min-height: 100px;
+    background-color: #ffffff26;
+    border-radius: 0px;
+    min-height: auto;
     max-height: 600px;
     overflow-y: auto;
-    padding: 5px;
+    padding: 4px;
 }
 
 .fbg_item_tab {
-    background-color: var(--principal-back);
+    background-color: rgb(37 37 37 / 57%);
     display: block;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    padding: 2px;
+    border-radius: 0px;
+    margin-bottom: 1px;
 }
 
 .fbg_item_tab * {
@@ -28,6 +28,7 @@
 .fbg_itemtabdisplay span {
     width: 24%;
     display: inline-block;
+    font-size: 14px;
 }
 
 

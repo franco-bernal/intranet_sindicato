@@ -30,7 +30,6 @@ Route::get('/Registro', [App\Http\Controllers\Registro_sociosController::class, 
 Route::get('/configuracionDashboard', [App\Http\Controllers\DashboardsController::class, 'configuracion'])->name('dashboard.configuracion');
 
 Route::get('/', [App\Http\Controllers\landingsController::class, 'index'])->name('landing.add');
-Route::get('/createUsers', [App\Http\Controllers\UsersController::class, 'create']);
 
 
 // admin
@@ -43,6 +42,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/solicitudes', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'index'])->name('solicitudes.page');
     Route::post('/enviarSolicitud', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'enviar_solicitud'])->name('solicitud.add');
     Route::POST('/cambiarEstado', [App\Http\Controllers\IncorporacionSolicitudesController::class, 'editStatus'])->name('solicitud.status');
+
+    // •USERS
+    Route::get('/userEdit', [App\Http\Controllers\UsersController::class, 'index'])->name('dashboard.users');
+    Route::post('/createUsers', [App\Http\Controllers\UsersController::class, 'createUser'])->name('dashboard.createuser');
+    Route::get('/deleteUsers', [App\Http\Controllers\UsersController::class, 'deleteUser'])->name('dashboard.deleteuser');
+
+    Route::post('/createPermiso', [App\Http\Controllers\PermisosDetailsController::class, 'crearPermiso'])->name('dashboard.createpermiso');
 });
 
 
