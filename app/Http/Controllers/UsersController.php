@@ -35,10 +35,8 @@ class UsersController extends Controller
                 ->where('name', '=', $request->name)
                 ->where('created_at', '=', $created_at)->first();
 
-            $mensaje_permisos = $this->permisosPorUsuario($user_data->id);
-            array_push($user_data, array('permisos' => $mensaje_permisos));
-            
-            return $user_data;
+            $mensaje_permisos = $this->permisosTecnicos($user_data->id);
+            return redirect()->back()->with('user_create', "usuario creado")->with('permiso_create', $mensaje_permisos);
         } else {
             return 0;
         }

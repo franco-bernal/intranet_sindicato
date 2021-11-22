@@ -17,6 +17,6 @@ class PermisosDetailsController extends Controller
         if ($resp == 1) {
             return redirect()->back()->with('msg_crearpermiso', "Permiso " . $request->nombre . " creado.");
         }
-        return redirect()->back()->with('msg_crearpermiso', "Permiso " . $request->nombre . " creado.");
+        return redirect()->back()->with('msg_crearpermiso', "Permiso no agregado.");
     }
 }

@@ -39,14 +39,23 @@
         <hr>
         <div>
             <h2>Crear Usuario</h2>
-            <div>
+            <form action="{{ route('dashboard.createuser') }}" method="post">
+                {{ csrf_field() }}
+
                 <input id="create-name" type="text" name="name" placeholder="nombre">
                 <input id="create-email" type="text" name="email" placeholder="email">
                 <input id="create-password" type="password" name="password" placeholder="contraseña">
                 <input id="create-re-password" type="password" name="re-password" placeholder="contraseña">
                 <input id="create-tipousuario" type="number" name="tipo_usuario" placeholder="tipo de usuario">
-                <a onclick="createUser(`{{ route('dashboard.createuser') }}`)">Crear Usuario</a>
-            </div>
+                <!-- <a onclick="createUser(`{{ route('dashboard.createuser') }}`)">Crear Usuario</a> -->
+                <button type="submit">Crear Usuario</button>
+                @if (\Session::has('user_create'))
+                <h2>{{ Session::get('user_create') }}</h2>
+                @endif
+                @if (\Session::has('permiso_create'))
+                <h2>{{ Session::get('permiso_create') }}</h2>
+                @endif
+            </form>
         </div>
         <hr>
         <div>
